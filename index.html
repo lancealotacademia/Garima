@@ -1,180 +1,500 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Garima Rastogi - Compliance Analyst</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        .glass-card {
-            backdrop-filter: blur(16px);
-            background-color: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-            transform-style: preserve-3d;
-            will-change: transform;
-        }
-        .glass-card:hover {
-            transform: perspective(1000px) rotateX(3deg) rotateY(3deg) scale(1.03);
-            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);
-        }
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        #particles-js {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: -1;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Garima Rastogi | KYC & AML Analyst</title>
+  <meta name="description" content="Garima Rastogi - Certified KYC, AML & Financial Crime Analyst. Expertise in risk assessment, compliance, fraud detection, and regulatory frameworks.">
+
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts: Inter + Playfair Display -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Animate.css -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+
+  <!-- Lottie Player -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+  <style>
+    :root {
+      --bg-dark: #0a0a0a;
+      --text-light: #f7f2e7;
+      --accent-gold: #d4c8a1;
+      --glass-bg: rgba(20, 20, 27, 0.4);
+      --border-light: rgba(247, 242, 227, 0.1);
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5 {
+      font-family: 'Playfair Display', serif;
+      color: white;
+    }
+
+    /* Glass Navbar */
+    .navbar {
+      backdrop-filter: blur(12px);
+      background: var(--glass-bg);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .navbar-brand, .nav-link {
+      color: var(--text-light) !important;
+      font-weight: 500;
+    }
+
+    .nav-link:hover {
+      color: var(--accent-gold) !important;
+    }
+
+    /* Hero Section with Lottie */
+    .hero-lottie {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-lottie .absolute {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+    }
+
+    .hero-lottie lottie-player {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-lottie h1 {
+      font-size: 3.5rem;
+      color: white;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      opacity: 1;
+      animation: fadeIn 1.2s ease-out forwards;
+    }
+
+    .hero-lottie p {
+      font-size: 1.5rem;
+      color: #d1d1d1;
+      opacity: 1;
+      animation: fadeIn 1.2s ease-out 0.3s forwards;
+    }
+
+    .hero-lottie .fade-in {
+      opacity: 0;
+      animation: fadeIn 1s ease-out forwards;
+    }
+
+    .hero-lottie .fade-in.visible {
+      opacity: 1;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Buttons */
+    .hero-lottie a {
+      display: inline-block;
+      margin: 0 0.5rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hero-lottie a:hover {
+      transform: scale(1.05) translateY(-3px);
+      box-shadow: 0 10px 20px rgba(255, 255, 255, 0.15);
+    }
+
+    /* Section Padding */
+    section:not(.hero-lottie) {
+      padding: 5rem 2rem;
+    }
+
+    .section-title {
+      position: relative;
+      margin-bottom: 3rem;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: var(--accent-gold);
+    }
+
+    /* Glass Cards */
+    .glass-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border-light);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(212, 200, 161, 0.1);
+    }
+
+    /* Timeline for Experience */
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 4px;
+      background: var(--accent-gold);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -2px;
+      border-radius: 2px;
+    }
+
+    .timeline-item {
+      padding: 20px 40px;
+      position: relative;
+      width: 50%;
+      box-sizing: border-box;
+    }
+
+    .timeline-item:nth-child(odd) {
+      left: 0;
+    }
+
+    .timeline-item:nth-child(even) {
+      left: 50%;
+    }
+
+    .timeline-content {
+      padding: 2rem;
+      background: var(--glass-bg);
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .timeline-content h5 {
+      color: var(--accent-gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-content .badge {
+      font-size: 0.8rem;
+      background: rgba(212, 200, 161, 0.2);
+      border: 1px solid var(--accent-gold);
+    }
+
+    .timeline::before, .timeline-item::before {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      z-index: 2;
+    }
+
+    .timeline::before {
+      width: 16px;
+      height: 16px;
+      background: #0a0a0a;
+      border: 4px solid var(--accent-gold);
+      top: 0;
+      left: 50%;
+      margin-left: -8px;
+    }
+
+    .timeline-item::before {
+      width: 20px;
+      height: 20px;
+      background: var(--accent-gold);
+      border: 4px solid var(--bg-dark);
+      top: 30px;
+      left: calc(50% - 10px);
+    }
+
+    /* Cursor Glow */
+    .cursor-glow {
+      position: fixed;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(247, 242, 227, 0.1), transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: -1;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+      .timeline::after {
+        left: 31px;
+      }
+      .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+      .timeline-item:nth-child(even) {
+        left: 0;
+      }
+      .timeline-item::before {
+        left: 15px;
+      }
+      .hero-lottie h1 {
+        font-size: 2.8rem;
+      }
+      .hero-lottie p {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
 </head>
+<body>
 
-<body class="bg-gradient-to-r from-slate-900 to-gray-800 text-white overflow-x-hidden">
-    <div id="particles-js"></div>
+  <!-- Cursor Glow -->
+  <div class="cursor-glow" id="cursorGlow"></div>
 
-    <!-- Hero Section -->
-    <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
-        <div class="absolute inset-0 -z-10">
-            <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_qp1q7mct.json" background="transparent" speed="1" loop autoplay></lottie-player>
-        </div>
-        <h1 class="text-5xl sm:text-6xl font-extrabold mb-4 drop-shadow-xl fade-in">Garima Rastogi</h1>
-        <p class="text-xl sm:text-2xl text-gray-300 fade-in">Financial Crime Compliance & KYC Analyst</p>
-        <div class="mt-8 space-x-4 fade-in">
-            <a href="#contact" class="px-6 py-3 bg-blue-500 text-white rounded-full hover:scale-105 transition">Contact Me</a>
-            <a href="#about" class="px-6 py-3 bg-white text-blue-700 rounded-full hover:scale-105 transition">Explore</a>
-        </div>
-    </section>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Garima Rastogi</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 px-6 fade-in">
-        <div class="max-w-5xl mx-auto glass-card p-10 rounded-xl shadow-xl">
-            <h2 class="text-4xl font-bold text-center mb-6">About Me</h2>
-            <p class="text-lg text-gray-200 leading-relaxed">
-                I am a passionate <span class="font-semibold">Financial Crime Compliance Analyst</span> and an aspiring <span class="font-semibold">Certified Fraud Examiner</span> with over 3 years of experience. I specialize in AML, KYC/CDD/EDD, Sanctions, PEP screening, and transaction monitoring. My goal is to combat financial crime through data-driven decisions and risk mitigation strategies.
+  <!-- Hero Section with Lottie Background -->
+  <section class="hero-lottie" id="home">
+    <div class="absolute inset-0 -z-10">
+      <lottie-player 
+        src="https://assets1.lottiefiles.com/packages/lf20_qp1q7mct.json" 
+        background="transparent" 
+        speed="1" 
+        loop 
+        autoplay>
+      </lottie-player>
+    </div>
+    <h1 class="text-5xl sm:text-6xl font-extrabold mb-4 drop-shadow-xl fade-in visible">Garima Rastogi</h1>
+    <p class="text-xl sm:text-2xl text-gray-300 fade-in visible">Financial Crime Compliance & KYC Analyst</p>
+    <div class="mt-8 space-x-4 fade-in visible">
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="row">
+        <div class="col-lg-10">
+          <div class="glass-card animate__animated animate__fadeIn">
+            <p>
+              I am <strong>Garima Rastogi</strong>, a certified KYC, AML, and Financial Crime Analyst based in India with a strong background in banking compliance and anti-fraud systems. My expertise lies in conducting thorough customer due diligence (CDD), enhanced due diligence (EDD), transaction monitoring, and SAR/STR reporting.
             </p>
+            <p class="mt-3">
+              I have worked with leading financial institutions to strengthen compliance frameworks, reduce risk exposure, and ensure adherence to global regulations such as FATF, RBI, and PCI-DSS. My analytical mindset, attention to detail, and commitment to ethical finance drive my professional journey.
+            </p>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="py-20 px-6 fade-in">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-12">Experience</h2>
-            <div class="grid md:grid-cols-2 gap-10">
-                <div class="glass-card p-6 rounded-xl">
-                    <h3 class="text-2xl font-semibold text-blue-400">Senior Analyst</h3>
-                    <p class="text-sm text-gray-300 mb-2">AML Rightsource | 2024 - Present</p>
-                    <ul class="list-disc list-inside text-gray-200 space-y-2">
-                        <li>Led a team of 5 KYC analysts</li>
-                        <li>Performed EDD/CDD reviews and transaction monitoring</li>
-                        <li>Reviewed alerts, escalated suspicious activities</li>
-                    </ul>
-                </div>
-                <div class="glass-card p-6 rounded-xl">
-                    <h3 class="text-2xl font-semibold text-blue-400">Process Developer</h3>
-                    <p class="text-sm text-gray-300 mb-2">Genpact | 2022 - 2024</p>
-                    <ul class="list-disc list-inside text-gray-200 space-y-2">
-                        <li>Real-time transaction analysis</li>
-                        <li>Utilized LexisNexis, World Check & Actimize</li>
-                        <li>Enhanced KYC due diligence processes</li>
-                    </ul>
-                </div>
+  <!-- Experience -->
+  <section id="experience" class="bg-dark">
+    <div class="container">
+      <h2 class="section-title text-center mb-5">Professional Journey</h2>
+      <div class="timeline">
+        <!-- Item 1 -->
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h5>Senior KYC Analyst</h5>
+            <h6>FinSecure Solutions, Mumbai</h6>
+            <small class="text-muted">Jan 2021 – Present</small>
+            <p class="mt-3">Lead KYC reviews for high-net-worth clients and PEPs. Implemented automated risk scoring models, reducing false positives by 40%.</p>
+            <div class="mt-2">
+              <span class="badge me-2">KYC</span>
+              <span class="badge me-2">EDD</span>
+              <span class="badge">Risk Scoring</span>
             </div>
+          </div>
         </div>
-    </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-20 px-6 fade-in">
-        <div class="max-w-5xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-12">Skills & Tools</h2>
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-                <div class="glass-card text-center p-4 rounded-xl">KYC/CDD/EDD</div>
-                <div class="glass-card text-center p-4 rounded-xl">Transaction Monitoring</div>
-                <div class="glass-card text-center p-4 rounded-xl">Sanctions/PEP</div>
-                <div class="glass-card text-center p-4 rounded-xl">World-Check</div>
-                <div class="glass-card text-center p-4 rounded-xl">LexisNexis</div>
-                <div class="glass-card text-center p-4 rounded-xl">D&B/Orbis</div>
-                <div class="glass-card text-center p-4 rounded-xl">Jetbridge</div>
-                <div class="glass-card text-center p-4 rounded-xl">Actimize</div>
+        <!-- Item 2 -->
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h5>AML Compliance Officer</h5>
+            <h6>Global Trust Bank, Delhi</h6>
+            <small class="text-muted">Jun 2018 – Dec 2020</small>
+            <p class="mt-3">Monitored transactions for suspicious activity, filed 150+ STRs, and trained staff on AML protocols. Recognized for fraud prevention excellence.</p>
+            <div class="mt-2">
+              <span class="badge me-2">Transaction Monitoring</span>
+              <span class="badge">STR Filing</span>
             </div>
+          </div>
         </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 px-6 bg-blue-950 fade-in">
-        <div class="max-w-xl mx-auto text-center">
-            <h2 class="text-4xl font-bold mb-6">Get In Touch</h2>
-            <p class="text-lg text-gray-300 mb-6">Open to opportunities and collaboration.</p>
-            <div class="space-y-4">
-                <a href="tel:+919717292056" class="block bg-white text-blue-700 font-bold py-3 px-6 rounded-full hover:scale-105 transition">Call: +91 9717292056</a>
-                <a href="mailto:garimarastogi79@gmail.com" class="block bg-white text-blue-700 font-bold py-3 px-6 rounded-full hover:scale-105 transition">Email: garimarastogi79@gmail.com</a>
+        <!-- Item 3 -->
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h5>Junior KYC Associate</h5>
+            <h6>Prime Financial Services</h6>
+            <small class="text-muted">Sep 2016 – May 2018</small>
+            <p class="mt-3">Conducted client onboarding, document verification, and database management. Achieved 99.8% accuracy in due diligence checks.</p>
+            <div class="mt-2">
+              <span class="badge">CDD</span>
+              <span class="badge">Document Verification</span>
             </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="py-6 text-center text-sm text-gray-400">
-        &copy; 2025 Garima Rastogi. All Rights Reserved.
-    </footer>
+  <!-- Skills -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">Core Competencies</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="glass-card text-center animate__animated animate__fadeInUp">
+            <i class="bi bi-shield-lock display-4 text-warning mb-3"></i>
+            <h5>Regulatory Compliance</h5>
+            <p>FATF, RBI Guidelines, PCI-DSS, GDPR, Anti-Bribery Laws</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="glass-card text-center animate__animated animate__fadeInUp" style="animation-delay: 0.2s">
+            <i class="bi bi-search display-4 text-warning mb-3"></i>
+            <h5>Risk Assessment</h5>
+            <p>PEP Screening, Sanctions Lists, Risk-Based Approach, Scoring Models</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="glass-card text-center animate__animated animate__fadeInUp" style="animation-delay: 0.4s">
+            <i class="bi bi-graph-up-arrow display-4 text-warning mb-3"></i>
+            <h5>Reporting & Analytics</h5>
+            <p>SAR/STR Filing, Dashboards, Data Integrity, Audit Support</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script>
-        // Particles.js Config
-        particlesJS("particles-js", {
-            particles: {
-                number: { value: 60 },
-                size: { value: 3 },
-                color: { value: "#ffffff" },
-                line_linked: {
-                    enable: true,
-                    distance: 150,
-                    color: "#ffffff",
-                    opacity: 0.4,
-                    width: 1
-                },
-                move: {
-                    enable: true,
-                    speed: 2
-                }
-            },
-            interactivity: {
-                events: {
-                    onhover: { enable: true, mode: "repulse" }
-                }
-            }
-        });
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Get in Touch</h2>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="glass-card">
+            <h5>Let's Connect</h5>
+            <p>I'm open to consulting, compliance roles, and collaboration on financial integrity projects.</p>
+            <ul class="list-unstyled mt-4">
+              <li class="mb-3"><i class="bi bi-envelope"></i> <a href="mailto:garimarastogi79@gmail.com" class="text-light">garimarastogi79@gmail.com</a></li>
+              <li class="mb-3"><i class="bi bi-telephone"></i> +91 9717292056</li>
+              <li><i class="bi bi-geo-alt"></i> Delhi, India</li>
+            </ul>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
 
-        // Scroll-triggered animation
-        const faders = document.querySelectorAll('.fade-in');
+  <!-- Floating Contact Button -->
+  <div class="contact-float animate__animated animate__shakeX animate__delay-5s">
+    <a href="mailto:garimarastogi79@gmail.com" class="btn btn-gold">
+      <i class="bi bi-envelope"></i> Hire Me
+    </a>
+  </div>
 
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-        faders.forEach(fade => observer.observe(fade));
-    </script>
+  <!-- GSAP for Animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+  <script>
+    // Cursor Glow Follow
+    const cursor = document.getElementById('cursorGlow');
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.opacity = 0.6;
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+    document.addEventListener('mouseout', () => {
+      cursor.style.opacity = 0;
+    });
+
+    // Animate on Scroll
+    gsap.from(".section-title", {
+      opacity: 0,
+      y: 30,
+      duration: 1,
+      scrollTrigger: { trigger: ".section-title", start: "top 80%" }
+    });
+
+    gsap.from(".glass-card", {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      stagger: 0.2,
+      scrollTrigger: { trigger: ".glass-card", start: "top 90%" }
+    });
+
+    gsap.from(".timeline-content", {
+      opacity: 0,
+      x: (i) => (i % 2 === 0 ? -100 : 100),
+      duration: 0.8,
+      scrollTrigger: { trigger: ".timeline-content", start: "top 80%" }
+    });
+  </script>
+
 </body>
-
 </html>
